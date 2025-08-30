@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* this is for the header*/
+.site-header { background:#000; color:#fff; }
+.site-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: .75rem 1rem;
+
+  /* 👇 this is what puts things side-by-side */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav { display: flex; gap: 1rem; }
+.actions { display: flex; align-items: center; gap: .5rem; }
+
