@@ -5,7 +5,14 @@ import { remark } from "remark";
 import html from "remark-html";
 import Image from "next/image";
 
+export const dynamic = 'force-static';
+export const runtime = 'nodejs';
+
+
+
 const DIR = path.join(process.cwd(), "src", "posts");
+console.log("[build] slugs:", fs.readdirSync(DIR).filter(f => f.endsWith(".md")));
+
 
 type Params = { params: { slug: string } };
 

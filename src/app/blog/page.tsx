@@ -4,7 +4,13 @@ import matter from "gray-matter";
 import Link from "next/link";
 import Image from "next/image";
 
+export const dynamic = 'force-static';
+export const runtime = 'nodejs';
+
+
+
 const DIR = path.join(process.cwd(), "src", "posts");
+console.log("[build] reading posts from:", DIR);
 
 type Post = {
   slug: string;
