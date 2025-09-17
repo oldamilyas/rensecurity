@@ -1,52 +1,25 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
-import Image from "next/image";
+export const dynamic = "force-static";
+import posts from "@/data/posts.generated.json";
 
-export const dynamic = 'force-static';
-export const runtime = 'nodejs';
+type Post = {
+  slug: string;
+  title: string;
+  date: string | null;
+  image?: string | null;
+  html: string;
+};
 
-
-
-const DIR = path.join(process.cwd(), "src", "posts");
-console.log("[build] slugs:", fs.readdirSync(DIR).filter(f => f.endsWith(".md")));
-
-
-type Params = { params: { slug: string } };
-
-function getPost(slug: string) {
-  const full = path.join(DIR, `${slug}.md`);
-  const raw = fs.readFileSync(full, "utf8");
-  const { data, content } = matter(raw);
-  return { meta: data as any, content };
-}
-
-function fmt(d?: string) {
-  if (!d) return "";
-  return new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(new Date(d));
-}
-
-// Build-time static params
 export async function generateStaticParams() {
-  if (!fs.existsSync(DIR)) return [];
-  return fs
-    .readdirSync(DIR)
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => ({ slug: f.replace(/\.md$/, "") }));
+  return (posts as Post[]).map((p) => ({ slug: p.slug }));
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;              // <-- await the promise
+function fmt(d?: string | null) {
+  return d ? new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(new Date(d)) : "";
+}
 
-  const { meta, content } = getPost(slug);
-  const processed = await remark().use(html).process(content);
-  const contentHtml = processed.toString();
+export default function PostPage({ params }: { params: { slug: string } }) {
+  const post = (posts as Post[]).find((p) => p.slug === params.slug);
+  if (!post) return <main className="mx-auto max-w-3xl px-4 py-10">Not found</main>;
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
@@ -59,27 +32,18 @@ export default async function PostPage({
         "
       >
         <header className="not-prose mb-6">
-          <h1 className="text-3xl font-bold">{meta.title}</h1>
-          {meta.date && (
-            <p className="mt-1 text-sm text-white/60">{fmt(meta.date)}</p>
-          )}
+          <h1 className="text-3xl font-bold">{post.title}</h1>
+          {post.date && <p className="mt-1 text-sm text-white/60">{fmt(post.date)}</p>}
         </header>
 
-        {meta.image && (
+        {/* If you still want a hero image from frontmatter */}
+        {/* {post.image && (
           <figure className="not-prose mb-8 overflow-hidden rounded-xl border border-white/10">
-            <Image
-              src={meta.image}
-              alt={meta.title}
-              width={1200}
-              height={630}
-              className="h-auto w-full object-cover"
-              priority
-            />
+            <img src={post.image} alt={post.title} className="h-auto w-full object-cover" />
           </figure>
-        )}
+        )} */}
 
-        {/* Markdown content */}
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
     </main>
   );
