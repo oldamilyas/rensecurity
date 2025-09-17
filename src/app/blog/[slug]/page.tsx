@@ -30,8 +30,14 @@ export async function generateStaticParams() {
     .map((f) => ({ slug: f.replace(/\.md$/, "") }));
 }
 
-export default async function PostPage({ params }: Params) {
-  const { meta, content } = getPost(params.slug);
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;              // <-- await the promise
+
+  const { meta, content } = getPost(slug);
   const processed = await remark().use(html).process(content);
   const contentHtml = processed.toString();
 
