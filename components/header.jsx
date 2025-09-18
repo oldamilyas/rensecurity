@@ -19,6 +19,8 @@ export default function Header() {
           gtag('config', 'G-37H513WEHN');
         `}
       </Script>
+      
+      <script src="https://analytics.ahrefs.com/analytics.js" data-key="HN8TyAGG/EwTFy2VescQtg" async></script> 
 
     <header className="site-header">
       <div className="site-header__inner">
