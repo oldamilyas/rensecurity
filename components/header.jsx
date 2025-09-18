@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
-import { getSortedPostsData } from "../lib/posts";
-import Search from "./Search";
+
+
 
 export default function Header() {
-  const posts = getSortedPostsData(); // used for search function
+  
   return (
 
     <>
@@ -23,7 +23,12 @@ export default function Header() {
         `}
       </Script>
       
-      <script src="https://analytics.ahrefs.com/analytics.js" data-key="HN8TyAGG/EwTFy2VescQtg" async></script> 
+      <Script
+        id="ahrefs"
+        src="https://analytics.ahrefs.com/analytics.js"
+        data-key="HN8TyAGG/EwTFy2VescQtg"
+        strategy="afterInteractive"
+      />
 
     <header className="site-header">
       <div className="site-header__inner">
