@@ -56,15 +56,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-      <ThemeProvider
-          attribute="class"            // adds "class" to <html>
-          defaultTheme="system"        // system by default
-          enableSystem
-          disableTransitionOnChange    // avoids flicker
-        >
+      
         <Header />        {/* 👈 now on ALL routes */}
         <main>{children}</main>
-        </ThemeProvider>
+        
       </body>
     </html>
   );
