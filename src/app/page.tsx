@@ -26,11 +26,11 @@ const TOPICS = [
   "Pentesting",
   "Threat Intelligence",
   "Blue Team",
-  "DevSecOps",
+  
   "Cloud Security",
   "Zero Trust",
   "Ransomware",
-  "API Security",
+  
 ];
 
 export default function Home() {
@@ -102,11 +102,13 @@ export default function Home() {
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div className="text-3xl font-bold">2</div>
-            <div className="mt-1 text-sm text-white/70">Audiences</div>
-            <p className="mt-2 text-sm text-white/60">
-              Practitioners (red/blue/devsecops) &amp; B2B leaders (CISOs, IT managers).
-            </p>
+            <div className="text-3xl font-bold">Target audience</div>
+            <div className="mt-1 text-sm text-white/70"></div>
+            <ul className="mt-2 text-sm text-white/70 list-disc pl-5 space-y-1">
+  <li>Practitioners (red/blue/devsecops)</li>
+  <li>B2B leaders (CISOs, IT managers)</li>
+</ul>
+
           </div>
 
           <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
