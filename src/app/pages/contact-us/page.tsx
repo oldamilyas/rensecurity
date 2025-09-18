@@ -10,8 +10,19 @@ type Social = {
 
 const socials: Social[] = [
   {
-    name: "Email",
-    href: "mailto:hello@rensecurity.com", // <- change
+    name: "Personal Email",
+    href: "mailto:oldamilyas@gmail.com", // <- change
+    label: "Send us an email",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor">
+        <path strokeWidth="1.8" d="M4 6h16v12H4z" />
+        <path strokeWidth="1.8" d="m4 7 8 6 8-6" />
+      </svg>
+    ),
+  },
+  {
+    name: "Professional Email",
+    href: "mailto:mohamed_selmanibouayoune@um5.ac.ma", // <- change
     label: "Send us an email",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor">
@@ -22,7 +33,7 @@ const socials: Social[] = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/rensecurity", // <- change
+    href: "https://www.linkedin.com/in/mohamed-selmani-bouayoune-660730183/", // <- change
     label: "Rensecurity on LinkedIn",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
@@ -30,19 +41,10 @@ const socials: Social[] = [
       </svg>
     ),
   },
-  {
-    name: "X",
-    href: "https://x.com/rensecurity", // <- change
-    label: "Rensecurity on X",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-        <path d="M18.9 2H21l-6.6 7.6L22 22h-6.8l-5.3-6.9L3.8 22H2l7.1-8.2L2 2h6.8l4.8 6.3L18.9 2zm-1.2 18h1.2L8.4 4H7.1l10.6 16z"/>
-      </svg>
-    ),
-  },
+  
   {
     name: "GitHub",
-    href: "https://github.com/rensecurity", // <- change
+    href: "https://github.com/oldamilyas", // <- change
     label: "Rensecurity on GitHub",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
@@ -52,7 +54,7 @@ const socials: Social[] = [
   },
   {
     name: "YouTube",
-    href: "https://youtube.com/@rensecurity", // <- change
+    href: "https://www.youtube.com/@mohamedselmani2914", // <- change
     label: "Rensecurity on YouTube",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
@@ -62,7 +64,7 @@ const socials: Social[] = [
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/rensecurity", // <- change
+    href: "https://www.instagram.com/mohamed_selmani__/", // <- change
     label: "Rensecurity on Instagram",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
@@ -72,7 +74,7 @@ const socials: Social[] = [
   },
   {
     name: "Facebook",
-    href: "https://facebook.com/rensecurity", // <- change
+    href: "https://www.facebook.com/grazy.gra/", // <- change
     label: "Rensecurity on Facebook",
     icon: (
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">

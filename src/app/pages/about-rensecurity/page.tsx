@@ -18,7 +18,7 @@ export default function AboutRensecurityPage() {
             style={{ shapeOutside: "inset(0 round 0.75rem)" }}
           >
             <Image
-              src="/images/rensecurity-logo.png"  // put your logo here
+              src="/favicon.svg"  // put your logo here
               alt="Rensecurity"
               width={176}
               height={176}
@@ -28,32 +28,35 @@ export default function AboutRensecurityPage() {
           </div>
         </div>
 
+        {/* Description updated to reflect the blog */}
         <p>
-          Rensecurity builds fast, resilient, and secure web experiences. We focus on
-          practical security for modern stacks — Node.js, Next.js, edge runtimes — with
-          clear documentation and reproducible examples.
+          Rensecurity is a cybersecurity blog focused on practical, reproducible
+          security engineering. We publish hands-on tutorials, pentesting
+          walkthroughs, blue-team tooling guides, and opinionated how-tos that
+          you can copy, paste, and adapt for real environments.
         </p>
 
         <p>
-          Our approach is simple: ship lean software, measure what matters, and share
-          the “how” so others can build safely. From static blogs to full-stack apps,
-          we care about performance, accessibility, and strong defaults.
+          Our content spans red/blue/purple teaming, secure architecture,
+          hardening, detection engineering, and incident response. We favor
+          minimal theory and maximum signal—configs, commands, dashboards, and
+          checklists that shorten your time to value.
         </p>
 
         <p>
-          This site is a living lab: posts are written in Markdown, built at compile
-          time, and served from the edge for near-instant loads worldwide.
+          The site is kept fast and simple: posts in Markdown, built at compile
+          time, and served from the edge—so you get low latency and a smooth
+          reading experience worldwide.
         </p>
 
         <div className="clear-both"></div>
 
-        {/* Highlights */}
+        {/* What we do — tailored to Rensecurity */}
         <h2>What we do</h2>
         <ul>
-          <li>Security guidance for Node.js/Next.js apps</li>
-          <li>Edge-ready architectures (Cloudflare, Vercel)</li>
-          <li>Performance, accessibility, and DX improvements</li>
-          <li>Hands-on, step-by-step tutorials and templates</li>
+          <li>Penetration testing walkthroughs & lab builds</li>
+          <li>Secure configuration & hardening guides (web, infra, cloud)</li>
+          <li>Threat intel briefs & actionable remediation steps</li>
         </ul>
 
         {/* Quick facts row */}
@@ -64,11 +67,11 @@ export default function AboutRensecurityPage() {
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm">
             <div className="opacity-70">Focus</div>
-            <div>Security · Next.js · Edge</div>
+            <div>Cybersecurity</div>
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm">
             <div className="opacity-70">Location</div>
-            <div>Morocco · Remote</div>
+            <div>Morocco</div>
           </div>
         </div>
 

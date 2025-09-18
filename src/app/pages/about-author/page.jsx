@@ -15,7 +15,7 @@ export default function AboutPage() {
           prose-a:text-sky-400 hover:prose-a:underline
         "
       >
-        <h1>About us</h1>
+        <h1>About Author</h1>
 
         {/* Floated author photo */}
         <div className="not-prose">
@@ -25,7 +25,7 @@ export default function AboutPage() {
           >
             <Image
               src="/images/upon-this-mortar-i-build-my-empire.jpg"   // put your image here
-              alt="Author"
+              alt="Mohamed Selmani Bouayoune"
               width={192}
               height={192}
               className="h-full w-full object-cover"
@@ -36,18 +36,19 @@ export default function AboutPage() {
 
         {/* Text wraps to the right of the image, then continues below */}
         <p>
-          Hey! I’m <strong>Your Name</strong>, a security enthusiast and full-stack
-          tinkerer. I write about web security, Node.js/Next.js, and hands-on
-          experiments that actually break (so you don’t have to).
+          Hey! I’m <strong>Mohamed Selmani Bouayoune</strong>, a cybersecurity engineer focused on
+          information systems security and secure digital transformation. I write about practical security—
+          from red/blue team tactics and DevSecOps to building resilient systems and tooling you can reuse.
         </p>
         <p>
-          My work focuses on building fast, resilient apps and explaining
-          complex topics simply. When I’m not shipping code, I’m documenting
-          what I learn so others can reuse it.
+          My recent work spans consulting and hands-on engineering: helping organizations monitor compliance
+          (GDPR/09-08), reviewing web architectures and MFA options, and building SOC stacks with Wazuh EDR,
+          ELK SIEM, and TheHive—plus automating active response to cut MTTC. I also enjoy turning raw data
+          into security KPIs and clear visualizations that drive decisions.
         </p>
         <p>
-          This site is a living notebook: lightweight, static, and CDN-fast.
-          Every post is Markdown, deployed from GitHub, and optimized at the edge.
+          This site is a living notebook: lightweight, static, and CDN-fast. Posts are written in Markdown,
+          versioned in GitHub, and deployed at the edge so you get speed without sacrificing depth.
         </p>
 
         {/* Stop the float so following blocks don’t wrap */}
@@ -57,15 +58,17 @@ export default function AboutPage() {
         <div className="not-prose mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm">
             <div className="opacity-70">Location</div>
-            <div>Casablanca, MA</div>
+            <div>Rabat, Morocco</div>
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm">
             <div className="opacity-70">Focus</div>
-            <div>Security · Next.js · DevOps</div>
+            <div>Cybersecurity consulting · Penetration testing services</div>
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm">
             <div className="opacity-70">Contact</div>
-            <a href="mailto:you@example.com" className="text-sky-400">you@example.com</a>
+            <a href="mailto:oldamilyas@gmail.com" className="text-sky-400">
+              oldamilyas@gmail.com
+            </a>
           </div>
         </div>
       </article>
