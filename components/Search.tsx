@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 type Post = {
@@ -10,23 +10,22 @@ type Post = {
 };
 
 export default function Search({ posts }: { posts: Post[] }) {
-  const [query, setQuery] = useState("");
+  const searchParams = useSearchParams();
+  const q = searchParams.get("q")?.toLowerCase() ?? "";
 
-  const filtered = posts.filter((post) =>
-    post.title.toLowerCase().includes(query.toLowerCase()) ||
-    (post.description ?? "").toLowerCase().includes(query.toLowerCase())
+  const filtered = posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(q) ||
+      (post.description ?? "").toLowerCase().includes(q)
   );
 
   return (
     <div className="search">
-      <input
-        type="search"
-        placeholder="Search blog posts…"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
+      <form action="/search" method="get">
+        <input type="search" name="q" placeholder="Search blog posts…" />
+      </form>
 
-      {query && (
+      {q && (
         <ul>
           {filtered.length > 0 ? (
             filtered.map((post) => (
