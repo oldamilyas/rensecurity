@@ -54,6 +54,13 @@ export default function SearchResults() {
   if (results.length === 0) return <p>No results found.</p>;
 
   return (
+    <>
+    <h1 style={{ fontWeight: "bold" }}>
+    Searching for:{" "}
+    <span style={{ color: "white", textDecoration: "underline" }}>
+        {q}
+    </span>
+    </h1>
     <ul style={{ listStyle: "none", padding: 0, marginTop: "2rem" }}>
       {results.map((p) => (
         <li
@@ -103,5 +110,6 @@ export default function SearchResults() {
         </li>
       ))}
     </ul>
+    </>
   );
 }
