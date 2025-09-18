@@ -40,9 +40,9 @@
   },
   "scripts": {
     "generate:posts": "node scripts/build-posts.mjs",
-    "prebuild": "node scripts/build-posts.mjs",
+    "prebuild": "node scripts/build-posts.mjs && node scripts/build-post-index.mjs",
     "build": "next build",
-    "dev": "node scripts/build-posts.mjs && next dev",
+    "dev": "node scripts/build-posts.mjs && node scripts/build-post-index.mjs && next dev",
     "deploy": "node scripts/build-posts.mjs && opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "preview": "node scripts/build-posts.mjs && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "start": "next start",

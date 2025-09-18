@@ -51,7 +51,9 @@ export default function Header() {
         </nav>
 
         <div className="actions">
-          <Search posts={posts} /> 
+        <form action="/search" method="get" role="search" className="search">
+          <input type="search" name="q" placeholder="Search blog posts…" />
+        </form> 
           <Link href="/pages/contact-us">Contact-us</Link>
         </div>
       </div>
