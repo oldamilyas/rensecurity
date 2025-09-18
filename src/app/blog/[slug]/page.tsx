@@ -2,14 +2,31 @@ export const dynamic = "force-static";
 
 import { notFound } from "next/navigation";
 import posts from "@/data/posts.generated.json"; // JSON generated at build time
+import type { Metadata } from "next";
 
 type Post = {
   slug: string;
   title: string;
   date: string | null;
+  description?: string | null;
   image?: string | null;
   html: string;
 };
+
+// generate dynamic titles and description for blog pages
+export async function generateMetadata(props: any): Promise<Metadata> {
+  const p = props?.params;
+  const { slug } = (p && typeof p.then === "function") ? await p : p;
+  const post = (posts as Post[]).find(x => x.slug === slug);
+  if (!post) return { title: "Post not found" };
+  return {
+    title: post.title,
+    description: post.description ?? undefined,
+    openGraph: { title: post.title, description: post.description ?? undefined },
+    twitter:   { title: post.title, description: post.description ?? undefined },
+  };
+}
+
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   return (posts as Post[]).map((p) => ({ slug: p.slug }));

@@ -27,7 +27,7 @@ export default function Header() {
 
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/hello-world/pexels-sabrina-gelbart-65954-249798.jpg"  // put the file in /public/images/
+            src="/favicon.svg"  // put the file in /public/images/
             alt="Rensecurity"
             width={28}
             height={28}
@@ -39,9 +39,9 @@ export default function Header() {
 
         <nav className="nav">
           <Link href="/">Home</Link>
-          <Link href='/pages/about-author'>About Author</Link>
+          <Link href='/pages/about-author'>About-Author</Link>
           <Link href="/blog">Blogs</Link>
-          <Link href="/pages/about-rensecurity">About Rensecurity</Link>
+          <Link href="/pages/about-rensecurity">About-Rensecurity</Link>
           
         </nav>
 
@@ -49,7 +49,7 @@ export default function Header() {
           <form action="/search" role="search" className="search">
             <input type="search" placeholder="Search documentation…" />
           </form>
-          <Link href="/pages/contact-us">Contact us</Link>
+          <Link href="/pages/contact-us">Contact-us</Link>
         </div>
       </div>
     </header>
