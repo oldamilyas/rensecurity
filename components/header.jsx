@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
+import { getSortedPostsData } from "../lib/posts";
+import Search from "./Search";
 
 export default function Header() {
+  const posts = getSortedPostsData(); // used for search function
   return (
 
     <>
@@ -48,9 +51,7 @@ export default function Header() {
         </nav>
 
         <div className="actions">
-          <form action="/search" role="search" className="search">
-            <input type="search" placeholder="Search documentation…" />
-          </form>
+          <Search posts={posts} /> 
           <Link href="/pages/contact-us">Contact-us</Link>
         </div>
       </div>
