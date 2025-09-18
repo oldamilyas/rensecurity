@@ -6,6 +6,8 @@ import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
 
+
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -89,6 +91,7 @@ export default function Header() {
             </form>
 
             <Link href="/pages/contact-us">Contact-us</Link>
+            
           </div>
 
           {/* Mobile actions: search icon + hamburger */}
@@ -132,6 +135,7 @@ export default function Header() {
                 <line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             </button>
+            
           </div>
         </div>
 
@@ -181,6 +185,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        
       </header>
     </>
   );
